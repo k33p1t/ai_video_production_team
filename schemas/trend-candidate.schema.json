@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Trend Candidate Research Record",
+  "type": "object",
+  "required": [
+    "candidate_id",
+    "source_type",
+    "platform",
+    "observed_at"
+  ],
+  "properties": {
+    "candidate_id": { "type": "string" },
+    "source_type": {
+      "enum": ["researched_trend", "manual", "hybrid"]
+    },
+    "platform": { "type": "string" },
+    "video_url": { "type": ["string", "null"] },
+    "creator": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "channel_url": { "type": ["string", "null"] }
+      }
+    },
+    "observed_at": { "type": "string", "format": "date-time" },
+    "published_at": { "type": ["string", "null"], "format": "date-time" },
+    "duration_seconds": { "type": ["integer", "null"] },
+    "views": { "type": ["integer", "null"] },
+    "comments": { "type": ["integer", "null"] },
+    "likes": { "type": ["integer", "null"] },
+    "shares": { "type": ["integer", "null"] },
+    "metric_availability": {
+      "type": "object",
+      "properties": {
+        "views": { "type": "string" },
+        "comments": { "type": "string" },
+        "likes": { "type": "string" },
+        "shares": { "type": "string" }
+      }
+    },
+    "video_quality_rating": { "type": ["integer", "null"], "minimum": 1, "maximum": 10 },
+    "concept_summary": { "type": "string" },
+    "recreation_difficulty_rating": { "type": ["integer", "null"], "minimum": 1, "maximum": 10 },
+    "language_recreation_difficulty_rating": { "type": ["integer", "null"], "minimum": 1, "maximum": 10 },
+    "copyright_assessment": {
+      "type": "object",
+      "properties": {
+        "risk_level": {
+          "enum": ["unassessed", "none_apparent", "possible", "likely", "confirmed"]
+        },
+        "evidence": { "type": "array", "items": { "type": "string" } },
+        "review_required": { "type": "boolean" }
+      }
+    },
+    "audience_fit_score": { "type": ["number", "null"] },
+    "trend_momentum_score": { "type": ["number", "null"] },
+    "evidence_confidence": { "type": ["number", "null"] },
+    "evidence_urls": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

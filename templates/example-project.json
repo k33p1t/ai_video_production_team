@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "project_id": "PRJ-20261024-001",
+  "name": "Example Manual Idea",
+  "created_at": "2026-10-24T00:00:00Z",
+  "updated_at": "2026-10-24T00:00:00Z",
+  "status": "created",
+  "current_stage": "idea_submitted",
+  "priority": "normal",
+  "owner": "human_project_owner",
+  "origin": "manual",
+  "production_settings": {
+    "target_platforms": ["YouTube", "TikTok"],
+    "target_audience": null,
+    "target_languages": ["en"],
+    "content_style": [],
+    "target_video_length_seconds": null,
+    "target_publish_date": null,
+    "budget_limit": null
+  },
+  "agents": [
+    {"agent_id": "agent_01", "name": "Supervisor", "status": "pending"},
+    {"agent_id": "agent_02", "name": "Trend Strategist", "status": "pending"},
+    {"agent_id": "agent_03", "name": "Trends Researcher", "status": "pending"},
+    {"agent_id": "agent_04", "name": "Storyboard Creator", "status": "pending"},
+    {"agent_id": "agent_05", "name": "Scriptwriter", "status": "pending"},
+    {"agent_id": "agent_06", "name": "Voice-Over Specialist", "status": "pending"},
+    {"agent_id": "agent_07", "name": "Quality Assurance", "status": "pending"},
+    {"agent_id": "agent_08", "name": "Publishing and Monitoring", "status": "pending"}
+  ],
+  "deliverables": [],
+  "approval": {
+    "required": true,
+    "status": "not_requested",
+    "artifact_hash": null,
+    "destination": null,
+    "approved_at": null
+  },
+  "blockers": [],
+  "revision_count": 0,
+  "revision_limit": 3,
+  "publish_status": "not_authorized",
+  "references": {
+    "event_log": "logs/events.jsonl",
+    "error_log": "logs/errors.jsonl",
+    "decision_log": "logs/decisions.jsonl"
+  }
+}

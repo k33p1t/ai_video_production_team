@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0.0",
+  "updated_at": "2026-10-29T12:00:00Z",
+  "config": {
+    "human_vote_multiplier": 3.0,
+    "decay_percent_per_month": 12.0,
+    "auto_add_confidence_threshold": 0.65,
+    "top_n_dashboard": 20,
+    "categories": [
+      "products",
+      "movies_tv",
+      "games",
+      "tech_tools",
+      "clothing_fashion",
+      "vehicles",
+      "music_artists",
+      "creators_influencers",
+      "events",
+      "memes_trends",
+      "other"
+    ],
+    "ranking_formula_notes": "rank_score = decayed_score + (cult_fanboy_score * 0.35) + recency_bonus(0–2). Decay is applied by Supervisor on a monthly (or weekly) tick."
+  },
+  "ideas": [
+    {
+      "idea_id": "IDEA-2026-0001",
+      "title": "Cult-following mechanical keyboard switches & custom keycap group buys",
+      "summary": "Enthusiast community around specific switch brands, lubing techniques, and limited keycap sets. Strong repeat purchase and unboxing culture.",
+      "category": "tech_tools",
+      "tags": ["mechanical-keyboards", "group-buy", "enthusiast", "custom"],
+      "niche_signals": ["r/MechanicalKeyboards", "keeb Discord servers", "Aftermarket keycap designers"],
+      "cult_fanboy_score": 8.5,
+      "lifecycle": "current",
+      "status": "active",
+      "confidence_at_intake": 0.82,
+      "sources": [],
+      "related_idea_ids": [],
+      "linked_project_ids": [],
+      "created_at": "2026-10-20T15:00:00Z",
+      "updated_at": "2026-10-28T10:00:00Z",
+      "last_decay_at": null,
+      "scores": {
+        "agent_vote_sum": 4.5,
+        "human_vote_sum": 2.0,
+        "weighted_raw": 10.5,
+        "decayed_score": 10.5,
+        "rank_score": 13.5,
+        "vote_count_agent": 3,
+        "vote_count_human": 1
+      },
+      "notes": "Example seed idea. High cult score + solid agent interest.",
+      "created_by": "agent_03"
+    },
+    {
+      "idea_id": "IDEA-2026-0002",
+      "title": "Upcoming indie game with heavy early Discord / TikTok cult energy",
+      "summary": "Placeholder for a game that shows rapid fan community formation before full release. Track wishlist velocity and fan content volume.",
+      "category": "games",
+      "tags": ["indie", "upcoming", "discord-cult", "wishlist"],
+      "niche_signals": ["Early Access watchers", "indie game Discords"],
+      "cult_fanboy_score": 7.0,
+      "lifecycle": "upcoming",
+      "status": "watching",
+      "confidence_at_intake": 0.71,
+      "sources": [],
+      "related_idea_ids": [],
+      "linked_project_ids": [],
+      "created_at": "2026-10-25T18:30:00Z",
+      "updated_at": "2026-10-25T18:30:00Z",
+      "last_decay_at": null,
+      "scores": {
+        "agent_vote_sum": 3.0,
+        "human_vote_sum": 0.0,
+        "weighted_raw": 3.0,
+        "decayed_score": 3.0,
+        "rank_score": 5.5,
+        "vote_count_agent": 2,
+        "vote_count_human": 0
+      },
+      "notes": "Seed example for upcoming + cult tracking.",
+      "created_by": "agent_03"
+    },
+    {
+      "idea_id": "IDEA-2026-0003",
+      "title": "Vintage / deadstock workwear and specific jacket silhouettes",
+      "summary": "Recurring fanatical interest in particular brands, eras, and cuts. Strong storytelling and authenticity angles for short-form and long-form.",
+      "category": "clothing_fashion",
+      "tags": ["workwear", "deadstock", "vintage", "authenticity"],
+      "niche_signals": ["workwear forums", "Japanese reproduction brands", "heritage clothing collectors"],
+      "cult_fanboy_score": 8.0,
+      "lifecycle": "evergreen",
+      "status": "active",
+      "confidence_at_intake": 0.78,
+      "sources": [],
+      "related_idea_ids": [],
+      "linked_project_ids": [],
+      "created_at": "2026-10-18T12:00:00Z",
+      "updated_at": "2026-10-27T09:00:00Z",
+      "last_decay_at": null,
+      "scores": {
+        "agent_vote_sum": 2.5,
+        "human_vote_sum": 1.0,
+        "weighted_raw": 5.5,
+        "decayed_score": 5.5,
+        "rank_score": 8.3,
+        "vote_count_agent": 2,
+        "vote_count_human": 1
+      },
+      "notes": "Evergreen niche with strong visual and story potential.",
+      "created_by": "human"
+    }
+  ]
+}

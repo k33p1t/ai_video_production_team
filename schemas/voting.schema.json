@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Trend Voting and Scoring Record",
+  "type": "object",
+  "required": [
+    "candidate_id",
+    "scoring_version",
+    "metric_scores",
+    "risk_gates",
+    "final_decision"
+  ],
+  "properties": {
+    "candidate_id": { "type": "string" },
+    "scoring_version": { "type": "string" },
+    "metric_scores": {
+      "type": "object",
+      "properties": {
+        "trend_momentum": { "type": "number", "minimum": 0, "maximum": 10 },
+        "audience_demand": { "type": "number", "minimum": 0, "maximum": 10 },
+        "originality": { "type": "number", "minimum": 0, "maximum": 10 },
+        "production_feasibility": { "type": "number", "minimum": 0, "maximum": 10 },
+        "monetization": { "type": "number", "minimum": 0, "maximum": 10 },
+        "evergreen_value": { "type": "number", "minimum": 0, "maximum": 10 },
+        "localization": { "type": "number", "minimum": 0, "maximum": 10 },
+        "platform_fit": { "type": "number", "minimum": 0, "maximum": 10 },
+        "evidence_confidence": { "type": "number", "minimum": 0, "maximum": 10 }
+      }
+    },
+    "weighted_metric_score": { "type": ["number", "null"] },
+    "agent_votes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "agent_id": { "type": "string" },
+          "vote": { "enum": ["support", "oppose", "abstain"] },
+          "score": { "type": "number", "minimum": 0, "maximum": 10 },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "reasoning": { "type": "string" },
+          "blocking_objections": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "vote_score": { "type": ["number", "null"] },
+    "combined_score": { "type": ["number", "null"] },
+    "risk_gates": {
+      "type": "object",
+      "properties": {
+        "copyright": { "type": "string" },
+        "safety": { "type": "string" },
+        "platform_compliance": { "type": "string" }
+      }
+    },
+    "human_preference": {
+      "type": "object",
+      "properties": {
+        "rating": { "type": ["number", "null"] },
+        "decision": {
+          "enum": ["not_reviewed", "promote", "veto", "approve", "reject"]
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "final_decision": {
+      "enum": ["pending", "selected", "backlog", "rejected", "archived"]
+    }
+  },
+  "additionalProperties": true
+}

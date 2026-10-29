@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Video Production Task Contract",
+  "type": "object",
+  "required": [
+    "project_id",
+    "task_id",
+    "role",
+    "objective",
+    "acceptance_criteria",
+    "inputs",
+    "outputs",
+    "retry_limit"
+  ],
+  "properties": {
+    "project_id": { "type": "string" },
+    "task_id": { "type": "string" },
+    "role": { "type": "string" },
+    "agent_version": { "type": "string" },
+    "objective": { "type": "string" },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "deadline": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "budget_limit_usd": {
+      "type": ["number", "null"],
+      "minimum": 0
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["artifact_ref"],
+        "properties": {
+          "artifact_ref": { "type": "string" },
+          "version": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "allowed_tools": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path"],
+        "properties": {
+          "path": { "type": "string" },
+          "schema": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "retry_limit": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "escalation_rule": { "type": "string" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Video Production Project Snapshot",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project_id",
+    "created_at",
+    "updated_at",
+    "status",
+    "current_stage",
+    "agents",
+    "deliverables",
+    "approval"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "project_id": { "type": "string" },
+    "name": { "type": "string" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "status": { "type": "string" },
+    "current_stage": { "type": "string" },
+    "priority": {
+      "enum": ["low", "normal", "high", "urgent"]
+    },
+    "owner": { "type": "string" },
+    "origin": {
+      "enum": ["manual", "trend", "hybrid"]
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["agent_id", "status"],
+        "properties": {
+          "agent_id": { "type": "string" },
+          "status": { "type": "string" },
+          "task_id": { "type": ["string", "null"] },
+          "last_heartbeat": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          },
+          "eta": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "deliverables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "status"],
+        "properties": {
+          "name": { "type": "string" },
+          "status": { "type": "string" },
+          "artifact_ref": { "type": ["string", "null"] },
+          "version": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "required": ["required", "status"],
+      "properties": {
+        "required": { "type": "boolean" },
+        "status": {
+          "enum": [
+            "not_requested",
+            "pending",
+            "approved",
+            "rejected",
+            "invalidated"
+          ]
+        },
+        "artifact_hash": { "type": ["string", "null"] },
+        "destination": { "type": ["string", "null"] },
+        "approved_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        }
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "eta_confidence": {
+      "enum": ["low", "medium", "high"]
+    },
+    "publish_status": { "type": "string" },
+    "revision_count": { "type": "integer", "minimum": 0 },
+    "revision_limit": { "type": "integer", "minimum": 1 }
+  },
+  "additionalProperties": true
+}
